@@ -20,4 +20,8 @@ class RacesFactory extends Factory
             //
         ];
     }
+    public function personajes()
+    {
+        return $this->hasMany(Personaje::class, 'raza_id');
+    }
 }
