@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonajeController;
+use App\Http\Controllers\UsuarioController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,4 +33,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/profile',[UsuarioController::class,'profile']);
+    //Route::resource('personajes', PersonajeController::class);
+    Route::resource('/personajes', PersonajeController::class)->names('personajes');
 });

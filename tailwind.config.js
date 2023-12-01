@@ -25,7 +25,7 @@ export default {
     plugins: [
         forms, 
         typography,
-        require('@flowbite/tailwindcss-flowbite/plugin'),
-        require("daisyui"),
+        // require('@flowbite/tailwindcss-flowbite/plugin'),
+        // require("daisyui"),
     ],
 };
