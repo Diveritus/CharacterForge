@@ -20,8 +20,5 @@ class PersonajeFactory extends Factory
             //
         ];
     }
-    public function raza()
-    {
-        return $this->belongsTo(Races::class, 'raza_id');
-    }
+    
 }

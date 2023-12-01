@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Items extends Model
 {
     use HasFactory;
+
+    public function personajes()
+    {
+        return $this->belongsToMany(Personaje::class, 'personaje_items');
+    }
 }

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PersonajeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::resource('personajes', PersonajeController::class);
+
+Route::get('/get-subrazas/{razaId}', 'PersonajeController@getSubrazas');
+Route::get('personajes/{id}/restore', 'PersonajeController@restore')->name('personajes.restore');
+
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
